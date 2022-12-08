@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-08 22:43+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\books\apps.py:7
+#, fuzzy
+#| msgid "Choose Category(ies)"
+msgid "Book & Category"
+msgstr "Книга и категория"
+
+#: .\books\models.py:7
+msgid "Category Name"
+msgstr "Название категории"
+
+#: .\books\models.py:7
+msgid "Enter category name"
+msgstr "Введите название категории"
+
+#: .\books\models.py:14
+msgid "Categories "
+msgstr "Категории "
+
+#: .\books\models.py:17
+msgid "Book Name"
+msgstr "Название книги"
+
+#: .\books\models.py:17
+msgid "Enter book name"
+msgstr "Введите название книги"
+
+#: .\books\models.py:19
+msgid "Choose Category(ies)"
+msgstr "Выберите категорию(и)"
+
+#: .\books\models.py:19
+msgid "Choose categoy(ies)"
+msgstr "Выберите категорию(и)"
+
+#: .\books\models.py:20
+msgid "Book Image"
+msgstr "Изображение книги"
+
+#: .\books\models.py:20
+msgid "Upload book image"
+msgstr "Загрузить изображение книги"
+
+#: .\books\models.py:21
+msgid "Book Author"
+msgstr "Автор книги"
+
+#: .\books\models.py:21
+msgid "Enter book author"
+msgstr "Введите автора книги"
+
+#: .\books\models.py:22
+msgid "Book Description"
+msgstr "Описание книги"
+
+#: .\books\models.py:22
+msgid "Upload book description"
+msgstr "Загрузить описание книги"
+
+#: .\books\models.py:23
+msgid "Book File"
+msgstr "Файл книги"
+
+#: .\books\models.py:23
+msgid "Upload book file"
+msgstr "Загрузить файл книги"
+
+#: .\books\models.py:24
+msgid "Book Pages"
+msgstr "Страницы книги"
+
+#: .\books\models.py:24
+msgid "Enter book pages"
+msgstr "Введите страницы книги"
+
+#: .\books\models.py:49
+msgid "Books "
+msgstr "Книги "
+
+#: .\project\settings.py:120
+msgid "English"
+msgstr "Английский"
+
+#: .\project\settings.py:121
+msgid "Russian"
+msgstr "Русский"
+
+#: .\project\settings.py:144
+msgid "MyBook Dashboard"
+msgstr "MyBook Dashboard"
+
+#: .\project\settings.py:165
+msgid "Welcome to the MyBook"
+msgstr "Добро пожаловать в MyBook"
+
+#: .\project\settings.py:185
+msgid "Home"
+msgstr "Главный"
+
+#: .\project\settings.py:188
+msgid "Support"
+msgstr "Поддерживать"
