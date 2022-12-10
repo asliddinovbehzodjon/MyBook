@@ -3,11 +3,17 @@ from django.contrib.auth.models import User
 # Create your models here.
 from django.utils.translation import gettext_lazy as _
 from django.utils.html import format_html
+from datetime import datetime
 class Category(models.Model):
     name = models.CharField(max_length=200,verbose_name=_("Category Name"),help_text=_("Enter category name"))
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
+    @property
+    def date(self):
+        mydate = self.created
+        return mydate.strftime("%m/%d/%Y, %H:%M:%S")
+
     def __str__(self):
         return self.name
     class Meta:
