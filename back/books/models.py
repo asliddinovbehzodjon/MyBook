@@ -13,6 +13,10 @@ class Category(models.Model):
     def date(self):
         mydate = self.created
         return mydate.strftime("%m/%d/%Y, %H:%M:%S")
+    @property
+    def bookscount(self):
+        kitoblar = len(self.books.all())
+        return kitoblar
 
     def __str__(self):
         return self.name
@@ -22,7 +26,7 @@ class Category(models.Model):
 class Book(models.Model):
     name = models.CharField(max_length=200,verbose_name=_("Book Name"),help_text=_("Enter book name"))
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ManyToManyField(Category,verbose_name=_("Choose Category(ies)"), help_text=_("Choose categoy(ies)"))
+    category = models.ManyToManyField(Category,verbose_name=_("Choose Category(ies)"), help_text=_("Choose categoy(ies)"),related_name='books')
     image = models.ImageField(upload_to='book-images',verbose_name=_("Book Image"), help_text=_("Upload book image"))
     author = models.CharField(max_length=150,verbose_name=_("Book Author"), help_text=_("Enter book author"))
     about = models.TextField(verbose_name=_("Book Description"), help_text=_("Upload book description"))

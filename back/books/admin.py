@@ -4,7 +4,7 @@ from modeltranslation.admin import TranslationAdmin
 from .models import *
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
-    list_display = ['name','user','date']
+    list_display = ['name','user','date','bookscount']
     fields = ['name']
     search_fields = ['name','user']
     list_filter = ['user']
@@ -23,7 +23,7 @@ class CategoryAdmin(TranslationAdmin):
         super().save_model(request, obj, form, change)
 @admin.register(Book)
 class BookAdmin(TranslationAdmin):
-    list_display = ['Book_Image','name','user','author','created','filesize']
+    list_display = ['Book_Image','name','user','author','created','filesize','viewed','downloaded']
     list_filter = ['category']
     search_fields = ['name','user','author','category']
     list_per_page = 10
