@@ -288,7 +288,7 @@ JAZZMIN_SETTINGS = {
     # override change forms on a per modeladmin basis
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
-    "language_chooser": True,
+    # "language_chooser": True,
 }
 # AWS_ACCESS_KEY_ID = 'AKIA2JSD7IF7QSOZAOW7'
 # AWS_SECRET_ACCESS_KEY = 'AKIA2JSD7IF7QSOZAOW7'

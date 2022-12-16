@@ -15,7 +15,7 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">
-              Home
+              {{$t('Home')}}
             </a>
       
             <a class="navbar-item">
@@ -37,6 +37,21 @@
           </div>
       
           <div class="navbar-end">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                {{$t('language')}}
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item" @click="setlanguage('en')">
+                  {{$t('english')}}
+                </a>
+                <a class="navbar-item"  @click="setlanguage('ru')">
+                  {{$t('russian')}}
+                </a>
+               
+              </div>
+            </div>
             <div class="navbar-item">
               <div class="buttons">
                 <a class="button is-primary">
@@ -58,18 +73,29 @@ import axios from 'axios';
     export default {
         data (){
             return {
-                categories:[]
+                categories:[],
+               
             }
         },
         methods:{
             getcategories(){
-                axios.get('api/book/category/').then(res=>{
+               
+                axios.get(`api/book/category/`).then(res=>{
                     this.categories = res.data
-                    console.log(this.categories)
+                    
                 })
+            },
+            setlanguage(lang){
+              this.$i18n.locale = lang;
+              console.log(this.$i18n.locale)
+              localStorage.setItem('language',lang)
+              this.$router.go()
+              
+              
             }
         },
         mounted(){
+            
             this.getcategories()
         }
     
