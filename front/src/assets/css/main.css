@@ -1,0 +1,54 @@
+.container{
+    padding: 10px 20px;
+}
+.card{
+    border-radius: 20px;
+    /* width: 300px;
+    max-height:600px ; */
+}
+
+.mine{
+    display: block;
+}
+.media-content{
+    padding: 5px 5px;
+    color: green;
+
+}
+.media-content p{
+    font-weight: 500;
+    margin:10px 0;
+   
+}
+.name{
+    font-size: 18px;
+}
+.author{
+    font-size: 17px;
+}
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchbar input::placeholder{
+    color: green;
+}
+.searchbar input{
+    height: 40px;
+    border:2px solid green;
+    margin: 15px 5px;
+    text-align: center;
+    width: 90%;
+    border-radius: 15px;
+    font-weight: 500;
+    
+    font-size: 16px;
+
+}
+.searchbar button{
+    height: 40px;
+  
+    text-align: center;
+    border-radius: 15px;
+}

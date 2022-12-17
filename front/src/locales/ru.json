@@ -2,5 +2,11 @@
     "Home":"Главный",
     "language":"Язык",
     "english":"Английский",
-    "russian":"Русский"
+    "russian":"Русский",
+    "category":"Категория(и)",
+    "favorites":"Избранное",
+    "janr":"Жанры",
+    "blog":"Блог",
+    "search":"Книга Поиска...",
+    "searchbook":"Поиск"
 }

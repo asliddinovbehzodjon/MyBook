@@ -34,19 +34,15 @@ schema_view = get_schema_view(
    public=True,
    permission_classes=[permissions.AllowAny],
 )
-# urlpatterns =i18n_patterns(
-#     path('i18n/',include('django.conf.urls.i18n')),prefix_default_language=False
-# )
-urlpatterns = [
+urlpatterns =[
+      path("set_language/<str:language>", set_language, name="set-language"),
+      path('i18n/',include('django.conf.urls.i18n'))
+]
+urlpatterns += i18n_patterns(
    re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
     path('api/book/',include('books.urls'))
-]
-urlpatterns = [
-    *i18n_patterns(*urlpatterns, prefix_default_language=False),
-
-
-]
+)
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

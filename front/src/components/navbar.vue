@@ -2,7 +2,7 @@
     <nav class="navbar  is-success" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
-            <img src="../assets/images/book.jpg" width="55" height="40">
+            <img src="../assets/images/book.jpg" width="55" height="40" class="img">
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -15,16 +15,11 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <a class="navbar-item">
-              {{$t('Home')}}
+              <i class="fa-solid fa-house"></i> &nbsp; {{$t('Home')}}
             </a>
-      
-            <a class="navbar-item">
-              Documentation
-            </a>
-      
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
-                More
+                <i class="fa-solid fa-arrow-down-short-wide"></i> &nbsp;{{$t('janr')}}
               </a>
       
               <div class="navbar-dropdown">
@@ -34,12 +29,20 @@
                
               </div>
             </div>
+            <a class="navbar-item" href="https://t.me/mybook_uzbot" target="_blank">
+              <i class="fa-brands fa-telegram"></i> &nbsp;   Telegram bot
+            </a>
+            <a class="navbar-item" >
+              <i class="fa-sharp fa-solid fa-pen"></i> &nbsp;  {{$t('blog')}}
+            </a>
+      
+           
           </div>
       
           <div class="navbar-end">
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
-                {{$t('language')}}
+                <i class="fa-solid fa-globe"></i>&nbsp; {{$t('language')}}
               </a>
       
               <div class="navbar-dropdown">
@@ -52,16 +55,9 @@
                
               </div>
             </div>
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
+            <a class="navbar-item">
+              <i class="fa-solid fa-bookmark"></i>&nbsp; {{$t('favorites')}}
+            </a>
           </div>
         </div>
       </nav>
