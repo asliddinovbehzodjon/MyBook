@@ -27,6 +27,7 @@ class BookAdmin(TranslationAdmin):
     list_filter = ['category']
     search_fields = ['name','user','author','category']
     list_per_page = 10
+    fields = ['name','category','image','author','about','file','book_pages']
     def save_model(self, request, obj, form, change):
         obj.user = request.user
         super().save_model(request, obj, form, change)

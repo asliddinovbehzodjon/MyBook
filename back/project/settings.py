@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     "corsheaders",
+'django_filters',
 ]
 CORS_ALLOWED_ORIGINS = [
 
@@ -289,6 +290,11 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
     "language_chooser": True,
+}
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+
 }
 from environs import Env
 env = Env()

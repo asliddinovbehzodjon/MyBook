@@ -9,7 +9,9 @@ from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 from django.utils import translation
 
-
+from .filter import BookFilter
+from .pagination import MyPagination
+from django_filters.rest_framework import DjangoFilterBackend
 def set_language(request, language):
     for lang, _ in settings.LANGUAGES:
         translation.activate(lang)
@@ -37,6 +39,9 @@ class CategoryViewset(ModelViewSet):
 class BooksViewset(ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    pagination_class = MyPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = BookFilter
     @action(detail=True, methods=['get','post'])
     def addview(self, request,pk):
          book = Book.objects.get(id=pk)

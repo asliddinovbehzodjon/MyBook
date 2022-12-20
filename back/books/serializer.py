@@ -17,7 +17,7 @@ class BookSerializer(serializers.ModelSerializer):
     size = serializers.SerializerMethodField('book_size')
     class Meta:
         model =Book
-        fields = ['name','user','image','author','category','created','about','file','downloaded','viewed','book_pages','size']
+        fields = ['id','name','user','image','author','category','created','about','file','downloaded','viewed','book_pages','size']
 
 
 
