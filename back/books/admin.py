@@ -23,7 +23,7 @@ class CategoryAdmin(TranslationAdmin):
         super().save_model(request, obj, form, change)
 @admin.register(Book)
 class BookAdmin(TranslationAdmin):
-    list_display = ['Book_Image','name','user','author','created','filesize','viewed','downloaded']
+    list_display = ['Book_Image','name','user','author','created','filesize','viewed','downloaded','commentscount']
     list_filter = ['category']
     search_fields = ['name','user','author','category']
     list_per_page = 10
@@ -41,3 +41,8 @@ class BookAdmin(TranslationAdmin):
         if obj is not None and obj.user != request.user:
             return False
         return True
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ['description']
+    
+    search_fields = ['description']
+admin.site.register(Comments,CommentsAdmin)

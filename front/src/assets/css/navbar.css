@@ -14,3 +14,7 @@
 .navbar-item,.navbar-item:hover,.navbar-link,.navbar-dropdown{
     border-radius: 15px;
 }
+.logo{
+    color: #fff;
+    font-size: 25px;
+}

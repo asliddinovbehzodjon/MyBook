@@ -253,7 +253,8 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
         'books.Book':'fas fa-book',
-        'books.Category':'fas fa-bars'
+        'books.Category':'fas fa-bars',
+        'books.Comments':"fas fa-comment-dots"
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",

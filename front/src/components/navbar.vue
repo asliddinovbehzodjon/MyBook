@@ -2,17 +2,17 @@
     <nav class="navbar  is-success" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
-            <img src="../assets/images/book.jpg" width="55" height="40" class="img">
+            <p class="logo">MyBook</p>
           </a>
       
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" id="burger" data-target="navbarBasicExample" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu"  v-bind:class="{'is-active': isOpen}">
           <div class="navbar-start">
             <a class="navbar-item">
               <i class="fa-solid fa-house"></i> &nbsp; {{$t('Home')}}
@@ -70,6 +70,7 @@ import axios from 'axios';
         data (){
             return {
                 categories:[],
+                isOpen: false,
                
             }
         },
@@ -93,7 +94,17 @@ import axios from 'axios';
         mounted(){
             
             this.getcategories()
-        }
+        },
+        watch: {
+    '$route' () {
+      this.isOpen = false;
+    
+    
+     
+    },
+   
+    
+    }
     
     }
 </script>

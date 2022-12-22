@@ -37,6 +37,9 @@ class Book(models.Model):
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
     @property
+    def commentscount(self):
+        return len(self.comments.all())
+    @property
     def Book_Image(self):
         return format_html('<img src="{}" width="50" height="50" style="border-radius:50%"'.format(self.image.url))
     @property
@@ -58,6 +61,15 @@ class Book(models.Model):
     class Meta:
         verbose_name_plural=_("Books ")
         db_table = "Books"
-
+class Comments(models.Model):
+    book = models.ForeignKey(Book,on_delete=models.CASCADE,related_name='comments')
+    description = models.TextField(verbose_name=_('Comment'),help_text=_("Enter comment"))
+    def __str__(self):
+        return self.description
+    class Meta:
+        db_table = 'Comments'
+        verbose_name = _('Comments')
+        verbose_name_plural = _('Comments')
+    
 
 

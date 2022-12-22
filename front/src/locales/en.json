@@ -7,7 +7,9 @@
   "favorites":"Favorites",
   "janr":"Genres",
   "blog":"Blog",
-  "search":"Search Book...",
-  "searchbook":"Search"
+  "search":"🔎 Search Book...",
+  "searchbook":"Search",
+  "moredownload":"More downloaded",
+  "searched":"Found books"
 
 }
