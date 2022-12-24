@@ -1,0 +1,20 @@
+.navbar{
+    margin: 10px 20px;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+.navbar-item{
+    font-weight: 500;
+    font-size: 17px;
+}
+.img{
+    width: 40px;
+
+}
+.navbar-item,.navbar-item:hover,.navbar-link,.navbar-dropdown{
+    border-radius: 15px;
+}
+.logo{
+    color: #fff;
+    font-size: 25px;
+}
