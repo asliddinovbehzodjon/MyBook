@@ -11,6 +11,8 @@ from django.utils import translation
 from rest_framework.filters import SearchFilter
 from .filter import BookFilter
 from .pagination import MyPagination
+from .models import *
+from .serializer import *
 from django_filters.rest_framework import DjangoFilterBackend
 def set_language(request, language):
     for lang, _ in settings.LANGUAGES:
@@ -64,7 +66,9 @@ from rest_framework.views import APIView
 class GetLikeBooks(APIView):
     def get(self,request,id):
         books =Book.objects.get(id=id)
-        
         likedbooks = Book.objects.filter(Q(category__in=books.category.all()))[:3]
         serializer = BookSerializer(likedbooks,many=True)
         return Response(serializer.data)
+class CommentsViewset(ModelViewSet):
+    queryset = Comments.objects.all()
+    serializer_class = CommentSerializer

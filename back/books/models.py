@@ -37,6 +37,9 @@ class Book(models.Model):
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
     @property
+    def bookcomments(self):
+        return list(self.comments.all().values())
+    @property
     def commentscount(self):
         return len(self.comments.all())
     @property
@@ -64,6 +67,7 @@ class Book(models.Model):
 class Comments(models.Model):
     book = models.ForeignKey(Book,on_delete=models.CASCADE,related_name='comments')
     description = models.TextField(verbose_name=_('Comment'),help_text=_("Enter comment"))
+    added = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.description
     class Meta:

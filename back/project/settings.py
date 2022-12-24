@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-*@o8!w7lur5y004k9d-!qbqrs6c2)igr#z9pieddbd6x(!&li^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.pythonanywhere.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-'modeltranslation',
+    'djangobower',
+    'modeltranslation',
     'jazzmin',
     'storages',
     'django.contrib.admin',
@@ -42,15 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'books.apps.BooksConfig',
-
     'rest_framework',
     "corsheaders",
-'django_filters',
+    'django_filters',           
 ]
 CORS_ALLOWED_ORIGINS = [
 
     "http://localhost:8080",
     "http://127.0.0.1:8080",
+    'https://mybookuz.netlify.app'
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,6 +66,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+
 
 TEMPLATES = [
     {
@@ -305,3 +307,6 @@ AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY =env.str('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME =env.str('AWS_STORAGE_BUCKET_NAME')
 AWS_DEFAULT_ACL = None
+ADMIN_CHARTS_NVD3_JS_PATH = 'bow/nvd3/build/nv.d3.js'
+ADMIN_CHARTS_NVD3_CSS_PATH = 'bow/nvd3/build/nv.d3.css'
+ADMIN_CHARTS_D3_JS_PATH = 'bow/d3/d3.js'
