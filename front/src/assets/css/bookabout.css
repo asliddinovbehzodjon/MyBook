@@ -1,0 +1,13 @@
+.comment{
+    width: 100%;
+    display: block;
+    height: 60px;
+    border-radius: 15px;
+    text-align: center;
+}
+.button{
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+}

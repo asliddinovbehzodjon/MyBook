@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar  is-success" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+          <router-link to="/" class="navbar-item" >
             <p class="logo">MyBook</p>
-          </a>
+          </router-link>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" id="burger" data-target="navbarBasicExample" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}">
             <span aria-hidden="true"></span>
@@ -24,7 +24,9 @@
       
               <div class="navbar-dropdown">
                 <a class="navbar-item" v-for="item in categories">
-                  {{item.name}}
+                  <router-link :to="{name:'Category',params:{id:item.id}}">
+                      {{ item.name }}
+                  </router-link>
                 </a>
                
               </div>

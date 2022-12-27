@@ -43,6 +43,5 @@ class BookAdmin(TranslationAdmin):
         return True
 class CommentsAdmin(admin.ModelAdmin):
     list_display = ['description','book']
-    
     search_fields = ['description']
 admin.site.register(Comments,CommentsAdmin)

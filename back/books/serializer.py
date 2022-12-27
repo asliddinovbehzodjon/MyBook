@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Category,Book,Comments
 class CategorySerializer(serializers.ModelSerializer):
-    books = serializers.StringRelatedField(many=True,read_only=True)
+    # books = serializers.StringRelatedField(many=True,read_only=True)
     user = serializers.StringRelatedField(read_only=True)
     bookcount = serializers.SerializerMethodField('books_soni')
 
@@ -10,7 +10,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ['name','books','bookcount','created','updated','user','name_en','name_ru']
+        fields = ['id','name','books','bookcount','created','updated','user','name_en','name_ru']
+        depth=2
 class BookSerializer(serializers.ModelSerializer):
     category = serializers.StringRelatedField(many=True,read_only=True)
     user = serializers.StringRelatedField(read_only=True)

@@ -17,11 +17,11 @@
             <div class="card crads">
                 <div class="card-image">
                     <figure class="image is-5by3 skeleton">
-                        <img :src="book.image" alt="{{book.name}}" class="big">
+                        <img :src="book.image" :alt="book.name" class="big">
                     </figure>
                 </div>
                 <div class="card-content">
-                    <div class="media">
+                    <router-link class="media" :to="{name:'BookAbout',params:{id:book.id}}">
                         <div class="media-left">
 
                         </div>
@@ -38,7 +38,7 @@
                             <p class="is-6 skeleton"><i class="fa-solid fa-file"></i> &nbsp;{{book.size}}</p>
                         </div>
 
-                    </div>
+                    </router-link>
 
                 </div>
                 <footer class="card-footer">
@@ -67,13 +67,14 @@
             <div class="card crads">
                 <div class="card-image">
                     <figure class="image is-5by3 skeleton">
-                        <img :src="book.image" alt="{{book.name}}" class="big">
+                        <img :src="book.image" :alt="book.name" class="big">
                     </figure>
                 </div>
                 <div class="card-content">
+                    
                     <router-link class="media" :to="{name:'BookAbout',params:{id:book.id}}">
                         <div class="media-left">
-
+                        
                         </div>
                         <div class="media-content">
                             <p class="is-4 name skeleton"><i class="fa-solid fa-book"></i> &nbsp;{{book.name}}</p>
